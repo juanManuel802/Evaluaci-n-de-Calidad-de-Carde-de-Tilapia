@@ -1,6 +1,7 @@
 package co.unillanos.secct.entities;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Lote {
@@ -77,6 +78,57 @@ public class Lote {
         this.clasificacionFinal = 0.0;
     }
 
+    public void cerrarEvaluacion() {
+        if (estado != EstadoLote.EN_EVALUACION) {
+            throw new IllegalStateException(
+                    "El lote '" + codigo.getValor()
+                            + "' debe estar en estado EN_EVALUACION para cerrar la evaluación (RN-020); estado actual: "
+                            + estado);
+        }
+        if (evaluaciones.isEmpty()) {
+            throw new IllegalStateException(
+                    "El lote '" + codigo.getValor()
+                            + "' debe tener al menos una evaluación registrada para cerrar (RN-021).");
+        }
+        double suma = 0.0;
+        for (Evaluacion e : evaluaciones) {
+            suma += e.getClasificacion();
+        }
+        this.clasificacionFinal = suma / evaluaciones.size();
+        this.estado = EstadoLote.EVALUADO;
+    }
+
+    public void registrarEvaluacion(Evaluacion evaluacion) {
+        if (evaluacion == null) {
+            throw new IllegalArgumentException(
+                    "La evaluacion a registrar no puede ser null.");
+        }
+        if (estado == EstadoLote.EVALUADO || estado == EstadoLote.REPORTADO) {
+            throw new IllegalStateException(
+                    "El lote '" + codigo.getValor()
+                            + "' no acepta nuevas evaluaciones en estado "
+                            + estado + " (RN-012).");
+        }
+
+        boolean esPrimeraEvaluacion = evaluaciones.isEmpty();
+        evaluaciones.add(evaluacion);
+
+        if (esPrimeraEvaluacion && estado == EstadoLote.ABIERTO) {
+            estado = EstadoLote.EN_EVALUACION;
+        }
+    }
+
+    public int cantidadEvaluaciones() {
+        return evaluaciones.size();
+    }
+
+    public boolean estaDisponible() {
+        boolean bajoQuota = evaluaciones.size() < numeroUnidadesMuestra;
+        boolean estadoAceptable =
+                estado == EstadoLote.ABIERTO || estado == EstadoLote.EN_EVALUACION;
+        return bajoQuota && estadoAceptable;
+    }
+
     public String getId() {
         return codigo.getValor();
     }
@@ -113,14 +165,11 @@ public class Lote {
         return observaciones;
     }
 
-    public int cantidadEvaluaciones() {
-        return evaluaciones.size();
+    public List<Evaluacion> getEvaluaciones() {
+        return Collections.unmodifiableList(evaluaciones);
     }
 
-    public boolean estaDisponible() {
-        boolean bajoQuota = evaluaciones.size() < numeroUnidadesMuestra;
-        boolean estadoAceptable =
-                estado == EstadoLote.ABIERTO || estado == EstadoLote.EN_EVALUACION;
-        return bajoQuota && estadoAceptable;
+    public double getClasificacionFinal() {
+        return clasificacionFinal;
     }
 }
