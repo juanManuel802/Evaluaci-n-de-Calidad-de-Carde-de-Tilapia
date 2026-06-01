@@ -113,14 +113,4 @@ public class Lote {
         return observaciones;
     }
 
-    public int cantidadEvaluaciones() {
-        return evaluaciones.size();
-    }
-
-    public boolean estaDisponible() {
-        boolean bajoQuota = evaluaciones.size() < numeroUnidadesMuestra;
-        boolean estadoAceptable =
-                estado == EstadoLote.ABIERTO || estado == EstadoLote.EN_EVALUACION;
-        return bajoQuota && estadoAceptable;
-    }
 }
