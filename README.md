@@ -1,3 +1,6 @@
+<img width="1536" height="1024" alt="99c65264-b4c5-447a-9f9b-4180013e07cd" src="https://github.com/user-attachments/assets/a36d6af1-edfc-4adb-8c77-bbbe9a703536" />
+
+
 # SECCT — Sistema de Evaluación de Calidad de Carne de Tilapia
 
 SECCT es una aplicación desarrollada para apoyar el registro y la evaluación de lotes de tilapia bajo los estándares **NTC 1443** y **GTC 157**.. Su propósito es facilitar el seguimiento de la calidad del producto mediante el registro de información relevante y la aplicación de criterios de evaluación establecidos.
