@@ -112,4 +112,5 @@ public class Lote {
     public String getObservaciones() {
         return observaciones;
     }
+
 }
