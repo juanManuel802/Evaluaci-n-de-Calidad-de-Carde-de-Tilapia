@@ -1,0 +1,204 @@
+<mxfile host="app.diagrams.net" pages="5">
+  <diagram id="Yu121_5SUBks8TnFwj34" name="General">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qqrVzRTnpHtIEMK1ynUy-5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Lote" vertex="1">
+          <mxGeometry height="208" width="260" x="80" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="qqrVzRTnpHtIEMK1ynUy-6" parent="qqrVzRTnpHtIEMK1ynUy-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;- CódigoLote: Int&lt;/div&gt;&lt;div&gt;-(demas datos que se piden en el registro)&lt;/div&gt;- EstadoLote: string&lt;div&gt;-PesoLote: Float&lt;br&gt;-Unidad: Unidad&lt;div&gt;-FechaCaptura: Date&lt;br&gt;&lt;div&gt;- evaluaciones: List&amp;lt;Evaluacion&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="114" width="260" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="qqrVzRTnpHtIEMK1ynUy-7" parent="qqrVzRTnpHtIEMK1ynUy-5" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="qqrVzRTnpHtIEMK1ynUy-8" parent="qqrVzRTnpHtIEMK1ynUy-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;div&gt;+ verificarDisponibilidad(): boolean&lt;br/&gt;+ registrarEvaluacion(e: Evaluacion): void&lt;br/&gt;+ obtenerPromedioClasificacion(): Float&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="260" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="qqrVzRTnpHtIEMK1ynUy-9" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Evaluación" vertex="1">
+          <mxGeometry height="130" width="160" x="460" y="749" as="geometry" />
+        </mxCell>
+        <mxCell id="qqrVzRTnpHtIEMK1ynUy-10" parent="qqrVzRTnpHtIEMK1ynUy-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ idImagen: String&lt;div&gt;- clasificacion: String&lt;/div&gt;&lt;div&gt;-PuntoEvaluación: String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="qqrVzRTnpHtIEMK1ynUy-11" parent="qqrVzRTnpHtIEMK1ynUy-9" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qqrVzRTnpHtIEMK1ynUy-12" parent="qqrVzRTnpHtIEMK1ynUy-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ getClasificacion() : String&lt;div&gt;+ cumpleNTC(): boolean&lt;/div&gt;" vertex="1">
+          <mxGeometry height="42" width="160" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="qqrVzRTnpHtIEMK1ynUy-14" edge="1" parent="1" style="endArrow=none;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;endFill=0;entryX=0.001;entryY=0.967;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.003;exitY=0.725;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry relative="1" x="-1" y="3" as="geometry">
+            <Array as="points">
+              <mxPoint x="459.38" y="819.83" />
+            </Array>
+            <mxPoint x="339.99999999999994" y="820.0099999999999" as="sourcePoint" />
+            <mxPoint x="459.3799999999998" y="821.658" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FN7bxz-sy6-nkky0IMmB-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Piscicultor" vertex="1">
+          <mxGeometry height="60" width="30" x="80" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="UD2mdyNu7AG3PBXdDSiE-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Registrar Lote" vertex="1">
+          <mxGeometry height="70" width="140" x="250" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="UD2mdyNu7AG3PBXdDSiE-2" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Seleccionar Lote" vertex="1">
+          <mxGeometry height="70" width="140" x="250" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="UD2mdyNu7AG3PBXdDSiE-3" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Evaluar Unidad" vertex="1">
+          <mxGeometry height="70" width="140" x="250" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="r1QSJJRZNBz3WJibnwTG-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Evaluar Lote" vertex="1">
+          <mxGeometry height="70" width="140" x="250" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="r1QSJJRZNBz3WJibnwTG-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;Los tres que antes era uno solo, los dejamos así en este diagrama?&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;O deberían estar ordenados de otra forma para que tengan en cuenta por ejemplo:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-El caso Evaluar Unidad se repite.&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="266" x="800" y="1170" as="geometry" />
+        </mxCell>
+        <mxCell id="r1QSJJRZNBz3WJibnwTG-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="El caso de uso Evaluar Unidad se estaba pensando también en poner un ultimpo paso en el escenario así:&lt;div&gt;Se repiten n veces los pasos anteriores&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="310" x="760" y="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="qN04dB2X5u4ICx-odWLy-1" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.571;entryDx=0;entryDy=0;entryPerimeter=0;" target="UD2mdyNu7AG3PBXdDSiE-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="110" y="380" as="sourcePoint" />
+            <mxPoint x="160" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qN04dB2X5u4ICx-odWLy-2" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="UD2mdyNu7AG3PBXdDSiE-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="110" y="380" as="sourcePoint" />
+            <mxPoint x="250" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qN04dB2X5u4ICx-odWLy-3" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.005;entryY=0.44;entryDx=0;entryDy=0;entryPerimeter=0;" target="UD2mdyNu7AG3PBXdDSiE-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="110" y="380" as="sourcePoint" />
+            <mxPoint x="360" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qN04dB2X5u4ICx-odWLy-4" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.429;entryDx=0;entryDy=0;entryPerimeter=0;" target="r1QSJJRZNBz3WJibnwTG-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="110" y="380" as="sourcePoint" />
+            <mxPoint x="331" y="401" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="FXo7QruY0QWtAe-vt8tK" name="CU-001">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3yHBtE-xrQjVX3JqTxIA-1" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="150" width="180" x="324" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="3yHBtE-xrQjVX3JqTxIA-2" parent="3yHBtE-xrQjVX3JqTxIA-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C6C6C6;" value="" vertex="1">
+          <mxGeometry height="150" width="180" as="geometry" />
+        </mxCell>
+        <mxCell id="3yHBtE-xrQjVX3JqTxIA-3" parent="3yHBtE-xrQjVX3JqTxIA-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;SECCT Starbyte System&lt;/b&gt;" vertex="1">
+          <mxGeometry height="16.666666666666668" width="120" x="30" y="8.333333333333334" as="geometry" />
+        </mxCell>
+        <mxCell id="rVNHKYyNU0QsFXmT8nwe-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Piscicultor" vertex="1">
+          <mxGeometry height="60" width="30" x="210" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="rVNHKYyNU0QsFXmT8nwe-2" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Registrar Lote" vertex="1">
+          <mxGeometry height="70" width="110" x="360" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="rVNHKYyNU0QsFXmT8nwe-6" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.571;entryDx=0;entryDy=0;entryPerimeter=0;" target="rVNHKYyNU0QsFXmT8nwe-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="220" y="240" as="sourcePoint" />
+            <mxPoint x="270" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="ySbVDCmwakCTnzWf3xxP" name="CU-002">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="EdyiDp_PI57D5_POwvzZ-1" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="160" width="170" x="370" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="EdyiDp_PI57D5_POwvzZ-2" parent="EdyiDp_PI57D5_POwvzZ-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C6C6C6;" value="" vertex="1">
+          <mxGeometry height="160" width="170" as="geometry" />
+        </mxCell>
+        <mxCell id="EdyiDp_PI57D5_POwvzZ-3" parent="EdyiDp_PI57D5_POwvzZ-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;SECCT Starbyte System&lt;/b&gt;" vertex="1">
+          <mxGeometry height="17.77777777777778" width="113.33333333333333" x="28.333333333333332" y="8.88888888888889" as="geometry" />
+        </mxCell>
+        <mxCell id="Yg86qE4vj1oYKZxCrXPY-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Piscicultor" vertex="1">
+          <mxGeometry height="60" width="30" x="260" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="Yg86qE4vj1oYKZxCrXPY-3" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Seleccionar Lote" vertex="1">
+          <mxGeometry height="70" width="110" x="400" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="Yg86qE4vj1oYKZxCrXPY-8" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Yg86qE4vj1oYKZxCrXPY-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="290" y="220" as="sourcePoint" />
+            <mxPoint x="410" y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="KZK_Pa2PMDOvKtp-3SCk" name="CU-003">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="--bPgGNbyUPgGXnFnDcy-1" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="170" width="180" x="370" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="--bPgGNbyUPgGXnFnDcy-2" parent="--bPgGNbyUPgGXnFnDcy-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C6C6C6;" value="" vertex="1">
+          <mxGeometry height="170" width="180" as="geometry" />
+        </mxCell>
+        <mxCell id="--bPgGNbyUPgGXnFnDcy-3" parent="--bPgGNbyUPgGXnFnDcy-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;SECCT Starbyte System&lt;/b&gt;" vertex="1">
+          <mxGeometry height="18.88888888888889" width="120" x="30" y="9.444444444444445" as="geometry" />
+        </mxCell>
+        <mxCell id="F4A_UkxHrYTfrOwxTA---1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Piscicultor" vertex="1">
+          <mxGeometry height="60" width="30" x="270" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="F4A_UkxHrYTfrOwxTA---4" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Evaluar Unidad" vertex="1">
+          <mxGeometry height="70" width="140" x="390" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="F4A_UkxHrYTfrOwxTA---9" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.005;entryY=0.44;entryDx=0;entryDy=0;entryPerimeter=0;" target="F4A_UkxHrYTfrOwxTA---4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="300" y="251" as="sourcePoint" />
+            <mxPoint x="539" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Gx5QNxcUbYw542QNVeAV" name="CU-004">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DsgydbX1I-oku8VSk4QB-1" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="160" width="180" x="340" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Uf6cgWpMkPDRvCn-VQ5J-2" parent="DsgydbX1I-oku8VSk4QB-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C6C6C6;" value="" vertex="1">
+          <mxGeometry height="160" width="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Uf6cgWpMkPDRvCn-VQ5J-1" parent="DsgydbX1I-oku8VSk4QB-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;SECCT Starbyte System&lt;/b&gt;" vertex="1">
+          <mxGeometry height="17.77777777777778" width="120" x="30" y="8.88888888888889" as="geometry" />
+        </mxCell>
+        <mxCell id="ZJpLkKmUKLqCLmDXUzbZ-5" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Evaluar Lote" vertex="1">
+          <mxGeometry height="70" width="140" x="360" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="ZJpLkKmUKLqCLmDXUzbZ-10" edge="1" parent="1" source="ZJpLkKmUKLqCLmDXUzbZ-1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.429;entryDx=0;entryDy=0;entryPerimeter=0;" target="ZJpLkKmUKLqCLmDXUzbZ-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="240" y="240" as="sourcePoint" />
+            <mxPoint x="461" y="261" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZJpLkKmUKLqCLmDXUzbZ-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="&lt;b&gt;Piscicultor&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="30" x="250" y="210" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

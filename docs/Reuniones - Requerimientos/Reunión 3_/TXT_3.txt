@@ -1,0 +1,365 @@
+Aquí tienes la transcripción detallada de la reunión:
+
+[00:00] (Sonido ambiente mientras el grupo se acomoda y organiza los equipos)
+
+[00:34] [Mujer]: ¿Cómo conectaste este?
+
+[00:36] [Hombre 1]: Le cambié los... los de... ahí está. Ahí está.
+
+[00:54] [Mujer]: ¿Y esta es la reconocida?
+
+[00:56] [Hombre 1]: Sí, esta está bien. ¿Le cambio la entrada?
+
+[00:58] [Mujer]: Ajá.
+
+[01:00] [Hombre 1]: Quiero ver... quiero ver el dos. El dos sí me toma los dos.
+Pero yo no quiero que me tome los dos, yo quiero que... quiero que este cambie
+al uno. Pero no quiere cogerlo. Ahí hay otro modo... ah no, es que... claro, no
+le daba tiempo. Ahí está el modo para probarles eso.
+
+[01:23] [Mujer]: Ajá.
+
+[01:24] [Hombre 1]: Ah, la de... pues del lunes... si se puede... paso al dos a
+la de... por código se hace.
+
+[01:31] [Mujer]: Ah, okay.
+
+[01:33] [Hombre 1]: Ah sí. O agarro el de la tabla de arriba y pego... pues que
+ahí... y sí, estaba buscando... y sí, ya tiene distancia en cuenta. Así está.
+
+[01:45] [Mujer]: Gracias.
+
+[01:47] [Hombre 1]: Hola, buenos días profe. Venimos a... pues presentarle la...
+una propuesta de esta idea que... pues surgen...
+
+[01:54] [Mujer]: ¿Es nueva?
+
+[01:55] [Hombre 1]: Sí, sí, a raíz de pues lo que... pues... juntando todos los
+casos de este semestre...
+
+[02:02] [Mujer]: Yo ya me perdí.
+
+[02:04] [Hombre 1]: Ah, como así no habíamos aprobado, nos han bloqueado...
+
+[02:07] [Mujer]: Pero...
+
+[02:09] [Hombre 1]: El cuatro con el... ah no, el de nosotros... pues... ah no,
+pues... ah el cuatro pues... perdón.
+
+[02:21] [Mujer]: ¿Qué es esto?
+
+[02:22] [Hombre 1]: Esta parte de un... lo que pasa es que miramos que... de lo
+que nosotros pensamos tal vez de... solamente extraer la parte de...
+
+[02:30] [Mujer]: No, esto estoy de acuerdo, sino que aquí colocaron "Internal
+Stranger".
+
+[02:33] [Hombre 1]: Sí, sí, sí. Es muy similar a una... a un repositorio de...
+lo que está diciendo es... el dos va a salir por el uno y el dos. Lo que
+nosotros necesitamos es que... pues digamos que salga por el dos. Que salga por
+el dos. Pero digamos que por ahora lo dejamos así hasta que... pues digamos que
+yo quiero que el uno se mantenga en la cartelera hasta que... pues ya luego yo
+pueda... cambiarlo por el dos. Que en este caso no va a ser literal tan... todo
+exacto, todo el tiempo. Pero pues sí por lo de menos... a ver si se alcanza a...
+Pero los flujos aquí son estos, no queremos profe decirle que... o sea esa es la
+arquitectura definitiva, sino pues queremos que pues de su merced... nos dé un
+tiempo de realimentar para este caso, que la verdad nos parece interesante
+porque sabemos que... pues o sea en la vida real es así, se toma un proyecto que
+no vamos a empezar desde cero, sino uno que ya nos lo dan y lo más probable es
+que no tenga así una arquitectura funcional, pero queremos hacerle el diseño
+como a nosotros nos gustaría de algo que tenga arquitectura limpia.
+
+[03:45] [Mujer]: Sí, eso está muy bien.
+
+[03:47] [Hombre 1]: Entonces... eh pues estamos... pues ya tratando de arreglar
+en cierto aspecto el alcance.
+
+[03:56] [Mujer]: No, vienen dos cables.
+
+[03:58] [Hombre 1]: Sí, vienen dos cables, pero solo sale uno al proyector, está
+igual que el switch que tenemos arriba. Entonces... nosotros lo que necesitamos
+es que las computadoras vayan a los dos. Que esa sea la estación. Por ejemplo,
+yo le digo que quiero que la entrada siete vaya a la siete. Y si la verificamos,
+ahí está bien. Ahora le voy a decir que quiero que la ocho también vaya a la
+siete. Y la verificamos y ahí pues no me dio instante inmediatamente, pero
+digamos sí por representas... sí... Además de... tema del modelo de limpieza que
+se va a usar, R-CNN, es bastante... consume bastantes recursos. Entonces, por
+ejemplo, a la hora de evaluar imágenes de manera simultánea, que era una opción,
+eh va a consumir muchísimos recursos, entonces eh para la... para optimizar esa
+parte y pues que queda ahí como para... no va a quedar tal cual, pero sí va a
+quedar ya... va a quedar bastante escalable.
+
+[05:16] [Hombre 1]: Entonces... pues aquí solo me están hablando de que queremos
+ir precisamente aquí... eh que digamos por el tiempo... eh como de... el
+alcance, precisamente el alcance, porque podríamos extraer la parte solamente
+de... que es lo que... que sí o sí tiene que ser, que es lo que tenemos más
+claro ahora, que es extraer solamente la parte de la red neuronal convolucional.
+Si acaso una línea de código digamos que de pronto lo manejen. Y con eso, sin
+vencerle de... de arquitectura, pero... por ejemplo no podríamos extraer el
+login de la administración de usuarios, eso no lo vamos a hacer nosotros, y
+quedaría simplemente... sí, quedaría simplemente un software por ejemplo con el
+cual nosotros cargamos una imagen y tiene el diseño de arquitectura limpia, no
+tiene la parte de manejo de usuarios, pero sí tiene la parte pues para subir la
+imagen y que la analice.
+
+[06:15] [Mujer]: Pero quisiera saber... no entiendo bien hasta dónde va a
+llegar.
+
+[06:20] [Hombre 1]: Integración... no, aquí es simplemente tratar de extraer
+pues la parte de esto que ellos tienen en Python, la parte de... pues de generar
+la red neuronal.
+
+[06:33] [Mujer]: ¿Extraer o usar?
+
+[06:35] [Hombre 1]: Usar, utilizarla. Literal crear otro repositorio o hacer un
+fork o no sé, otra rama, y de ahí mirar como... como le hacemos para sacar esa
+cosa, copiar y integrar o extraer de alguna forma la parte de las CNN. Y así
+simplemente pues digamos que aplicarla para... para nuestro caso de uso.
+
+[06:56] [Mujer]: Que el caso de uso de ustedes sería... le ponemos una imagen y
+le aplicamos el algoritmo para... si nos para ver si nos puede decir la calidad
+de ese pescado.
+
+[07:11] [Hombre 1]: Sí, lo que ellos entregan... lo que ellos tienen.
+
+[07:14] [Mujer]: ¿Y ese algoritmo que ellos tienen qué evalúa?
+
+[07:17] [Hombre 1]: Evalúa ojos y agallas. Valiéndole la agalla, dándole los dos
+rasgos... los de... la larva, lo de... identifica si es pescado o no pescado. No
+se ha implementado este de pescado, lo que sí tiene es una validación de de que
+dependiendo de la imagen, eh no verifica si qué tipo de pez es, pero sí hace una
+validación de de que si es pez o no es pez. Digamos si usted le pasa una foto de
+un celular, pues no lo toma.
+
+[07:44] [Mujer]: Okay, muy bien. Pues por mí no hay ningún problema, pero
+quisiera... quisiera ver entonces en concreto cuáles serían los casos de uso que
+implementarían. O sea, estoy de acuerdo con todo lo que plantean y... por
+ejemplo, cómo calcular la muestra, sino que sea que digan cuántos son.
+
+[08:04] [Hombre 1]: Sería el de... de los lotes... eh pues... sería... o sea
+todo lo que tenga que ver en el flujo de usted cargar... de cargar imagen hasta
+procesar y... y entregar una clasificación. Donde entraría un caso de uso de
+carga de imagen, estaría el de preprocesamiento de imagen, estaría el caso de
+uso de evaluación de... de la imagen. Carga de imagen, preprocesamiento,
+evaluación. Y yo creo que esos por... aparte ya de los de lo que ya se está
+implementado que es lo de usuarios. O sea, es que no se puede integrar lo uno
+con la parte de usuarios que ellos ya tienen, por lo menos no ahorita, porque
+nos toca portarnos el programa en otra... en otra base de datos, eh y qué...
+entonces nos toca sacar la base de datos de nosotros aparte. Ya tenemos un
+postgres que es para para eso que está creado y el script para pues que cree la
+base de datos. Pero es que la verdad es como un poquito complicado lo de tomar
+lo de ellos que es para la parte de inicio de sesión y crear los usuarios,
+aparte de que nosotros también tendríamos que implementar por así decirlo esa
+parte de los casos de uso para los usuarios, entonces para que los usuarios
+entren con sus casos de uso. Entonces lo ideal pues sería eh... o sea hacer al
+menos solo la parte del software con Clean Architecture de el funcionamiento. No
+meteríamos registro de lotes para trazabilidad, ni usuarios, sino simplemente lo
+que con el tiempo que tenemos alcanzar a hacer lo de: cargo una imagen, la
+preproceso, la IA la analiza, la califica y entrega el resultado. Por tiempo
+no... consideramos que no alcanzamos.
+
+[10:04] [Mujer]: Pero eso... es decir, digamos por tiempo una sola persona no
+alcanzaría a hacer eso, pero ustedes son cuatro. ¿Sí? O sea, yo creo que que eso
+es suficiente para una persona. Una persona se haga cargo de implementar en
+Clean Architecture eso. Pero son cuatro. Y no van a estar los cuatro haciendo el
+código de llamar a la IA para que evalúe la imagen. ¿Sí? Entonces yo creo que
+tenemos que buscar por lo menos, en mi opinión, eh una manera en que van a
+distribuir eso que van a hacer o agregar un par de casos de uso más, porque cada
+uno de ustedes tiene que mostrar en el proyecto de semestre un análisis, un
+diseño y una implementación.
+
+[11:10] [Hombre 1]: Pues sería... pues teniendo entonces sería caso de uso para
+la carga de imágenes, caso de uso para el preprocesamiento de la imagen,
+arreglarla...
+
+[11:19] [Mujer]: O sea, o decir, entonces van a tener cuatro botones: cargar
+imagen, y luego un botón que dice preprocesar. Digamos que no tiene sentido. ¿Sí
+me voy a entender? Tú cargas la imagen para procesarla. O sea, vamos por buen
+camino, vamos por buen camino, pero pensemos en un par de casos de uso más.
+Pensemos de aquí al viernes...
+
+[11:55] [Hombre 1]: Eh pues las de carga de imagen no, o sea es
+preprocesamiento...
+
+[11:58] [Mujer]: Exacto, todo, todo. O sea evaluar la imagen. Son esas de hecho
+esas ya tienen de... lo que hay es de carga y de preprocesamiento de evaluación
+están en el drive. Pero no hay internet para conectarnos al drive. Ay sí, sí
+hay. Sí, sí hay de de de allá afuera. Pero dime cuál es la... dime si yo me
+estoy equivocando. Cargar la imagen es decirle eh que suba el archivo o ¿o es
+algo más?
+
+[12:25] [Hombre 1]: No, es solo o sea que suba el archivo y ya ahí pues ahí va a
+ser... sí no, o sea no es que este sea un caso de uso. El caso de uso es hacer
+ya el procesamiento de la imagen. O sea el preprocesamiento de la imagen es uno
+y el otro ya es el el análisis como tal, ese es el segundo caso de uso, no
+recuerdo cómo lo llaman ellos. Evaluación de calidad es que se llama el caso de
+uso que ellos tenían. Serían esos dos.
+
+[12:50] [Mujer]: Bueno okay, entonces digamos que ese... ahí hay para dos
+personas. Ahí, en eso que me acaban de decir. De pronto no para una persona,
+para dos. Entonces podría ser que los otros casos de uso implementar... uno para
+reportes, porque tenemos que generar un reporte eh con la con el análisis, ¿no?
+siguiendo la normativa de la NTC 194. Podría ser un caso de uso también de
+imprimir reporte, o generar reporte.
+
+[13:19] [Hombre 1]: Y el otro para el tema de registrar lotes...
+
+[13:22] [Mujer]: Por ejemplo...
+
+[13:23] [Hombre 1]: Para trazabilidad.
+
+[13:24] [Mujer]: Ajá.
+
+[13:26] [Hombre 1]: Porque para poder generar reporte tenemos que tener por lo
+menos pues no sé, lotes. Y ahí ya se metería entonces el tema de de usuarios...
+
+[13:35] [Mujer]: Ah bueno, no entonces no, porque los usuarios son... de pronto
+no. ¿Y no funcionó conectando Direct tampoco? No queremos hacerlo porque se nos
+dañan los de... No queremos configurar eso ahí en la laptop. Y de la red me dice
+que es manual o algo... por si acaso la porción de las imágenes... de las
+entradas ya le cambiamos de entrada... Entonces la siguiente vez hago aquí lo
+que estaba haciendo arriba... con con los pescados... sí, mientras tanto pero
+vamos... en TeamViewer... sí, ese ese parecido a ese. Eh no hay problema porque
+dijo que lo podíamos hacer. Okay, porque pues podríamos hacer algo de de lo de
+lotes eh donde podemos hacer pues toda esa parte de análisis de cálculos
+estadísticos que es lo del lote. Que tenga... cuando un usuario logra cargar
+las imágenes, el lote tiene que seleccionar de dónde vino y anotar tal parte
+de... ajá... información de procedencia para el conteo... después para cálculos
+estadísticos... oprimir dos veces... sí. Entonces podrían ser los dos casos de
+uso de registrar de generar reporte y el de registrar lote. Ellos tenían
+generación de reportes, el análisis con la IA, procesamiento y registrar el lote
+y además eh la gestión de usuarios de inicio de sesión y el login. Entonces
+estaríamos hablando de... bueno... eh preparar una imagen que incluye cargarla
+y... y internamente hace el preprocesamiento que es por lo de 150x150...
+preparar la imagen... que incluye cargarla y generar la imagen procesada... y
+guardarla ahí para pues... y guardarla para posterior... exacto que esté lista
+para que se pueda evaluar. Ese es un caso de uso. El otro caso de uso es evaluar
+la imagen. Evaluar la imagen. Listo, tenemos esos dos casos de uso. ¿Cuáles
+serían los otros? Otra vez. Registrar el lote, registrar lote y imprimir y
+generación del reporte. El lote... al final o sea tenemos el lote, tenemos las
+imágenes que tomamos de ese lote, tenemos el preprocesamiento de las imágenes de
+las listas, luego tenemos el de analizar la imagen que son las imágenes ya
+preprocesadas y tenemos finalmente la generación de un reporte estructurado con
+según la norma y de ese lote que tomamos.
+
+[16:53] [Mujer]: Bueno listo, está bien. Lo único es que tiene que ser con Clean
+Architecture de manera que el siguiente semestre fácilmente puedan... sea
+escalable... Sí, vamos a manejar eso, vamos a generar un fork por así decirlo,
+pero ya no va a ser fork sino vamos a reestructurar todos esos cuatro casos de
+uso eh para cada caso de uso pues el escenario pues todo lo que nos ha aprendido
+este semestre de evaluarlos de este semestre...
+
+[17:21] [Mujer]: Una pregunta, y esos... esos algoritmos que ellos utilizan no
+podrían mejor extraerlos?
+
+[17:29] [Hombre 1]: Precisamente lo único, lo único que extraeríamos que es lo
+que nos interesa es lo único no tan escalable... para que sean dos proyectos
+diferentes para que sea este proyecto y el de ellos... sí eso es lo que... lo
+único que rescataríamos es... vamos a ver si nos es posible, eso lo vamos a
+hacer para este viernes, vamos a extraer el... la parte de la CNN que va a ser
+para el caso de uso de analizar la imagen. Tal vez la misma de que ellos tienen
+y vamos a mirar ahí en el transcurso de que diseñamos para ver qué le qué le...
+hacer el preprocesamiento de pronto corregir ciertas cositas.
+
+[18:01] [Mujer]: Y para este viernes no podrían tener también esto es por lo
+menos la... la la estructura en el proyecto, la arquitectura así no esté
+funcionando todavía de los otros dos casos de uso, de registrar el lote y de los
+reportes.
+
+[18:22] [Hombre 1]: Tener análisis de registrar lote de los casos de uso para
+este viernes...
+
+[18:26] [Mujer]: Ajá y la y la estructura en en la arquitectura del proyecto.
+Pero eso lo tiene que hacer alguno de ustedes, o sea no lo puede hacer la misma
+persona que va a hacer lo de revisar el el extraer el algoritmo y traer... sí
+no... de los casos de uso para trabajar en paralelo. Ajá y crean un nuevo
+proyecto, no va a ser fork de lo de ellos, sino que ellos nos entregan...
+nosotros este viernes de nosotros le mostramos lo que es la arquitectura eh
+extraído ya las funcionalidades que pues pudimos rescatar y aunque no esté
+funcionando el desarrollo de cada caso de uso.
+
+[19:07] [Mujer]: Sí por lo menos la de la decisión de respon- la asignación de
+responsabilidades. Viernes, ¿en qué horario pueden ustedes para que nos veamos?
+
+[19:16] [Hombre 1]: Viernes tenemos solamente de doce a dos ocupado, de resto no
+tenemos... yo tengo de ocho a diez... de diez a doce... ¿pueden de diez a doce?
+Sí de diez a doce yo lo veo bastante viable. De diez a doce... sí...
+
+[19:33] [Mujer]: Yo tengo clase.
+
+[19:35] [Hombre 1]: Ah, ¿a qué horas tienes el viernes?
+
+[19:37] [Mujer]: De las dos en adelante.
+
+[19:38] [Hombre 1]: Ah entonces por mi parte... yo tengo acá... por la tarde no
+pueden? No, tengo clase de dos a seis. De dos a seis... ¿y en la mañana ocho de
+la mañana? Sí ocho, de ocho a diez. Ah el viernes... viernes... yo tengo
+laboratorio el viernes de ocho a... les toca el viernes... yo el viernes ahí
+viene su queda borrador entonces nosotros... viernes... ¿o hay posibilidad de
+que nos reunamos de manera virtual?
+
+[20:13] [Mujer]: Sí, pero igual si tienen clase y yo tengo clase el tema no es
+la virtualidad o la presencialidad.
+
+[20:19] [Hombre 1]: Sí es para al menos mostrar al menos en una presentación eh
+como los avances de de manera rapidísima de diez minuticos.
+
+[20:30] [Mujer]: No... Entonces el lunes por la tarde?
+
+[20:34] [Hombre 1]: El lunes por la tarde es que ya se nos estaría proyectando
+demasiado y no alcanzaríamos. Ay no... eh por la tarde a qué hora?
+
+[20:53] [Mujer]: Cuatro.
+
+[20:54] [Hombre 1]: Bueno pues nos toca el próximo martes otra vez y aplazamos
+nuestro viernes otra vez eh nos toca el jueves... tengo internet... el viernes a
+las diez ya no... después... profe pronto una de la mañana... es que si no... de
+pronto puede ser la noche un ratito rápido?
+
+[21:24] [Mujer]: No yo el viernes salgo... digo que sí y ya no... podría el
+jueves a las tres. Sí las tres... sí... jueves a las tres... diez parciales...
+jueves de dos a cuatro... yo también tengo clase de dos a seis. No pues qué tal
+después de qué hora dice que puede? Podría ser el viernes... yo el viernes puedo
+a las ocho o después de las dos. Después de las dos... yo tengo que viajar...
+pues Santiago viaja y yo también tengo que viajar pronto cojo ruta de la
+alcaldía a las dos y media sale. Pues bueno pues si quiere entonces sería el
+lunes en la tarde pero poner más objetivos para no quedarnos tan atrasados en el
+tiempo. ¿Qué le parece profe?
+
+[22:20] [Mujer]: Sí sí... pues igual toca el martes. La profe piensa... Hagamos
+una cosa, el viernes a las diez de la mañana envíenmelo y yo lo reviso sola.
+Cualquier cosa les pregunto por el WhatsApp. Ah listo profe. O sea lo hacemos
+asincrónica. Listo profe. ¿Listo? Me envían el viernes a las diez de la mañana
+me escriben por el grupo eh el repositorio donde puedo descargar lo que puedo
+mirar y cualquier cosa yo les pregunto. Ahí adentro de ahí de esa carpeta va a
+estar la carpeta de archivos y ahí va a estar lo de cada uno, diagrama... ajá
+listo... bueno listo... bueno pues ahora mismo...
+
+[23:03] [Hombre 1]: Profe y una pregunta también con el tema de la base de de
+datos para la carga de imágenes pues porque ellos lo tienen dockerizado, o sea
+el proyecto inicial ellos lo tienen dockerizado, Juan y Santiago pues ya
+configuraron Postgres pero pues no sé qué opciones usted vea más pues porque
+tocaría hacerlo en el computador de Juanma o el que tiene GPU entonces es mucho
+más rápido cuando al momento de ejecutar el algoritmo es mucho más rápido en el
+computador de Juanma pero el computador de Juanma no tiene mucho espacio para
+para las imágenes. Entonces no sé usted profe usted que conoce más qué alterna-
+qué opción podemos tomar ahí para solucionar eso.
+
+[23:45] [Mujer]: Le comentamos si tengo la posibilidad de de otro computador...
+no tiene tanto tiene es precisamente para para disco. Pero yo tengo una torre
+que tiene yo tengo una torre que tiene un disco de un tera disco de estado
+sólido, ah pero no tiene GPU. Sería es decir yo puedo facilitar esa torre para
+que hagamos pruebas en esa torre y si nos funciona ahí lo haríamos ahí. Ah
+listo... y pues hay que dockerizar de todas maneras para no tener problemas de
+de dónde vamos a poner la base de datos. Okay y la torre la traemos cuando puede
+ser. La pregunta es dónde la ponemos a funcionar ustedes que están en grupos de
+ingenieros quién está aquí en semillero? Pues en el Texter o sea en el segundo
+piso. Pregunten allá si pueden poner una una torre allá. Vale. Y habría que
+conseguir monitor... Allá seguramente les facilitan uno, perfecto y teclado y
+mouse. Sí. Mañana les traigo la torre. Sí la dejo allá.
+
+[24:59] [Mujer]: Listo muchachos.
+
+[25:01] [Grupo]: Muchas gracias. Hasta luego profe.
+
+[25:03] (Fin de la grabación)

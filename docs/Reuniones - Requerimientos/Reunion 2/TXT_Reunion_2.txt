@@ -1,0 +1,156 @@
+Esta es una transcripción verbatim (al pie de la letra), capturando las
+muletillas, repeticiones y el lenguaje técnico utilizado por los participantes.
+
+Transcripción Verbatim: Proyecto Evaluación Carne de Tilapia
+
+Participantes:
+
+  - Marco: Ingeniero/Docente evaluador.
+  - Olga Lucero: Docente líder del proyecto.
+  - Estudiante (S): Principalmente Santiago (quien expone).
+  - Estudiantes (Otros): Voces de apoyo del grupo.
+
+00:00 - Introducción y Consentimiento
+
+Estudiante (S): Eh, primero, pues presentarnos... como grupo nosotros somos una
+parte del proyecto de... de lo que es la carne de Tilapia y queríamos grabar el
+audio pues para no... no omitir después cualquier detalle importante de lo que
+nos diga. Marco: Ah, ya, sí, no hay inconveniente. Luisa: Bueno, pues yo lo
+mismo que pido es que esa grabación sea solo para este fin específico, que no la
+vayan a... a cortar, a descontextualizar y a publicarla en otros lados.
+Estudiantes: Ah, sí, sí, sí, claro. No, por supuesto.
+
+00:31 - Presentación y Línea Base
+
+Estudiante (S): Entonces... eh... nosotros somos el equipo de... de evaluación
+de carne de Tilapia. Eh... pues somos eh... Santiago, Juan Manuel, Mateo y
+Luisa. Entonces, a partir de la primera reunión, pues... logramos extraer
+ciertos datos que pues tenemos de este proyecto, como lo es la información y el
+enfoque del proyecto, una línea base, requerimientos funcionales, requerimientos
+no funcionales, restricciones del proyecto, riesgos y casos de uso
+identificados. (Lectura de diapositiva) Estudiante (S): Información y enfoque
+del proyecto: Tenemos como objetivos automatizar la evaluación de la calidad de
+carne de Tilapia mediante el procesamiento de imágenes. Eh... aportar al
+proyecto de evaluación de carne de Tilapia para apoyar la evaluación del experto
+humano actualmente realizada por expertos... eh... y contribuir a los
+productores a poder validar productos de calidad.
+
+01:45 - El reto de la Arquitectura Limpia
+
+Estudiante (S): ¿De dónde partimos? Eh, digamos nos comentan que ya existe...
+eh... requerimientos de procesos... eh... hay unas cosas que necesitamos
+mencionar y es que... teniendo en cuenta que estamos siguiendo un proyecto que
+viene desde el semestre pasado para Ingeniería de Software que se inició, pues
+nosotros tenemos que ya empezar a aplicar desde este semestre lo que es
+arquitectura limpia. Estudiante (S): Vemos necesario refactorizar siguiendo esta
+arquitectura limpia el código que nos pasaron, porque no está... no está en
+arquitectura limpia. ¿Por qué? Porque desde este semestre se empezó a
+implementar por parte de la materia de diseño y evaluación. Entonces pasaron y
+sin tener eso en cuenta, pues resulta de eso que pues... no está. Entonces vemos
+necesario primero devolvernos un momentico para poder refactorizar el código
+para poder partir y entregar un producto de calidad.
+
+03:31 - Requerimientos Funcionales y No Funcionales
+
+Estudiante (S): Requerimientos funcionales en lo que es gestión de lotes:
+Seleccionar la especie, calcular el tamaño de muestra y registrar el lote. En
+captura y carga: Almacenamiento local offline, guía visual de captura y
+preprocesamiento de imágenes. Estudiante (S): El sistema debe aplicar
+automáticamente eliminación de fondo, normalización de iluminación y ajuste de
+contraste para estandarizar la captura. Para la evaluación: Procesar imágenes
+con IA, clasificar la calidad, evaluación individual e identificar área de
+evaluación. Estudiante (S): En analítica de datos: Dashboard de analítica,
+trazabilidad del producto e histórico de evaluaciones. Rendimiento: El tiempo
+que tomaría para evaluar cada pez. Usabilidad: Interfaz móvil, manual de usuario
+y visual de pantalla adaptable. Portabilidad: Funcionar en distintos
+dispositivos o de manera offline.
+
+11:27 - Feedback de Marco sobre el proceso académico
+
+Marco: Bueno, yo primero pues... este... cada vez valoro más este ejercicio que
+la ingeniera Olga Lucero está... está liderando, ¿cierto? Que es eh... que
+realmente los cursos de ingeniería de software tengan un impacto importante a la
+hora de desarrollar proyectos pertinentes, ¿no? Lo que hemos hablado, o sea
+de... de generar una... una sinergia bien interesante eh... que conduzca al
+desarrollo de software digamos profesional, desarrollo de software con un
+impacto regional. Marco: Me parece muy bueno digamos eh... la revisión que van a
+hacer al código, la refactorización... porque digamos eh... el enfoque que se
+tuvo con los del grupo del semestre pasado eh... pues primero era un grupo muy
+grande. O sea yo siempre he manifestado eso, ojalá el grupo se reduzca para
+poder hacer este tipo de seguimientos mucho más eh... sin tanto afán. Luisa: Y
+más a profundidad, no tan superficial. Marco: Sí, claro, porque es que o sea...
+eran como 46 el semestre pasado, entonces era muy... muy complicado hacer una
+revisión como muy en detalle, ¿sí? Me parece muy bueno eso y que cada paso que
+se vaya dando se dé de acuerdo claro a los principios de arquitectura, de código
+limpio y de buenas prácticas.
+
+14:15 - Corrección de la Dra. Olga Lucero (Certificación vs. Calidad)
+
+Olga: Pero hay una cosita que les quisiera detallar de los objetivos... El
+último de los objetivos, ese. En realidad, tenga o no tengan una evaluación
+basada en imágenes, su calidad de producto no va a cambiar. Lo que contribuye
+esta herramienta es a que ellos puedan validar o certificar la calidad de su
+producto. Su proceso de producción es otro cuento. No es "a poder otorgar
+productos de calidad" sino a poder validar la calidad de sus productos. Marco:
+No, sí, y eso es muy pertinente porque el proyecto macro es que estas
+evaluaciones se hagan en cualquier punto de todo el proceso de producción. Es
+decir, saber por ejemplo cuando llegue el filete al hogar, a través de un código
+QR, saber "ah este pescado fue cultivado en Mesetas". Pero para eso se necesita
+como esos puntos de evaluación para poder validar que el producto es bueno.
+
+16:30 - Escalabilidad de Especies
+
+Marco: El sistema debe soportar distintas especies. Eso es clave. Aquí surge una
+pregunta de investigación, ¿no? Eso todavía no lo hemos resuelto. Una cosa es
+evaluar cachama y otra tilapia. Pero sí, a nivel de arquitectura, el software
+debe ser escalable a cualquier especie. Que si llegó Yamú pues que sea fácil
+incorporarlo. Obviamente los ojos del Yamú van a ser diferentes a los de la
+cachama. La piel, las escamas... Yo entre lo que he leído no he encontrado un
+modelo que tenga esa capacidad de autoajustarse a la distinta especie que
+llegue.
+
+19:30 - Muestreo y Registro de Lotes
+
+Estudiante (S): Calcular el tamaño de la muestra: El sistema debe calcular
+automáticamente el número de unidades a fotografiar para obtener una evaluación
+estadísticamente válida. Marco: ¿Cómo va a calcular el tamaño de la muestra?
+Estudiante (S): La manera en que lo hicimos fue a través del muestreo aleatorio
+simple. El sistema registra la cantidad de peces que diga el dueño, hay 100,
+entonces el sistema dice cuántos hay que sacar de esos 100 para evaluarlos.
+Marco: Habría que mirar si hay una mejor forma... Pero registrar lote de
+evaluación debe indicar también las condiciones: temperatura, altitud, qué tan
+congelado estuvo. Olga: Y el punto. Registrar el punto donde se está haciendo la
+evaluación exactamente. Si es estación piscícola, centro de acopio o punto de
+distribución.
+
+28:25 - La Guía Visual (El Molde)
+
+Estudiante (S): Guía visual de captura: Que aparezca la figurita de la tilapia
+para que la persona sepa en qué posición ponerla. Hay un dibujo de cómo poner el
+pez. Marco: ¡Ah! ¡Buenísima! Esa es pero clave. Porque no es decirle "tantos
+centímetros", no, usted la coloca ahí y entonces ella le da la guía... o sea que
+encaje con el molde. Eso no lo habían hecho.
+
+31:28 - IA y Redes Convolucionales
+
+Marco: O sea, si logran hacer que haya un molde, se tome la foto y aparte de eso
+haya un preprocesamiento de imagen... eso ya es algo importante. Ya la
+refactorización y estos dos pasos, eso ya es un gran cimiento. De pronto hasta
+se podría evaluar... o sea sin esa guía y sin ese preprocesamiento qué resultado
+daba, y ahora con el molde y el preprocesamiento qué resultado da el algoritmo.
+Marco: Usar Redes Neuronales Convolucionales (CNN) es la técnica apropiada.
+Tomen el modelo que tomó Diego (el monitor) para tomar algunos resultados. Pero
+insisto, si les gusta esto, es un tema que hay que estudiar fuerte.
+
+38:00 - Cierre de la reunión
+
+Marco: Tengo una clase a las 12 y tengo que preparar un material. Los felicito,
+han hecho un muy buen análisis. Estos requerimientos van. Este semestre no van a
+poder ser todos... pero para este semestre me gustaría: la refactorización, la
+guía visual, el preprocesamiento y la aplicación del modelo con IA. Estudiante
+(S): Listo ingeniero, muchas gracias. Marco: Mis horarios son lunes y martes
+de 10 a 11:30 y jueves de 3 a 4. Me agendan por Google Calendar. Estén
+pendientes de la Jornada Acuicultura, es de los eventos más importantes de la
+región.
+
+Fin de la transcripción.
