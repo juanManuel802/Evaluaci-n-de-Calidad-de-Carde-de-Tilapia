@@ -37,7 +37,13 @@ src/
 │   ├── adapters/ui/       # Pantallas JavaFX
 │   └── infrastructure/    # Repositorio en memoria y clasificador simulado
 └── test/                  # Tests por capa
-```
+---
+## Documentación
+ 
+En la carpeta `/docs` se encuentra documentación técnica adicional:
+ 
+- **Guía de entrenamiento del modelo** — describe el proceso, los datos utilizados y los parámetros del clasificador CNN.
+- **Restricciones de integración** — especifica las condiciones y límites que debe respetar cualquier implementación del modelo real al integrarse con el sistema.
 
 ---
 ## Ejecución
