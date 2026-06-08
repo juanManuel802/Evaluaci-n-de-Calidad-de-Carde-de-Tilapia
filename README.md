@@ -57,7 +57,8 @@ En la carpeta `/docs` se encuentra documentación técnica adicional:
 
 ## Estado actual
 
-El proyecto cubre los casos de uso principales (registrar lote, evaluar unidades, cerrar evaluación). El clasificador CNN es un *fake* por ahora — sirve como placeholder hasta integrar el modelo real. El estado `REPORTADO` está definido pero no implementado todavía.
+El proyecto cubre los casos de uso principales (registrar lote, evaluar unidades, cerrar evaluación). El clasificador CNN es solo para una demostración ya que no fue entrenado con imágenes reales, se planea entrenarlo con imágenes reales para futuras versiones.
+Aún no se genera reportes.
 
 ---
 
