@@ -1,0 +1,6 @@
+{
+  "partes": [
+    { "parte": "OJO",  "categoria_ntc": 3, "confianza": 0.91 },
+    { "parte": "PIEL", "categoria_ntc": 2, "confianza": 0.85 }
+  ]
+}

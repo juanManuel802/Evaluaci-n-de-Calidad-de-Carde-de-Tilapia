@@ -5,7 +5,7 @@
 
 ## Punto de partida
 
-El software espera un archivo `models/modelo_entrenado.h5` que cumpla este contrato sin excepción:
+El software espera un archivo `models/modelo_calidad_tilapia.h5` que cumpla este contrato sin excepción:
 
 | Parámetro | Valor requerido |
 |---|---|
@@ -265,13 +265,13 @@ Si los resultados tienen sentido visual, el modelo está listo.
 ## Paso 8 — Guardar e integrar
 
 ```python
-model.save("modelo_entrenado.h5")
+model.save("modelo_calidad_tilapia.h5")
 ```
 
 Luego copiar el archivo al directorio del proyecto:
 
 ```
-models/modelo_entrenado.h5   ← reemplazar este archivo
+models/modelo_calidad_tilapia.h5   ← reemplazar este archivo
 ```
 
 No se requiere ningún cambio en el código Java ni en `servicio_inferencia.py`. El script `iniciar_secct.sh` lo levantará automáticamente en el siguiente arranque.

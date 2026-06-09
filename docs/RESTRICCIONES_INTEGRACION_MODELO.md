@@ -24,13 +24,13 @@
 El script de arranque (`iniciar_secct.sh`) busca el modelo en esta ruta exacta:
 
 ```text
-models/modelo_entrenado.h5
+models/modelo_calidad_tilapia.h5
 ```
 
 El archivo debe estar en formato HDF5 y guardado con:
 
 ```python
-model.save("modelo_entrenado.h5")
+model.save("modelo_calidad_tilapia.h5")
 ```
 
 > [!WARNING]

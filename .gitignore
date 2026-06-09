@@ -52,3 +52,13 @@ bin/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Python
+servicioCNN/.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs generados por iniciar_secct.sh
+.logs/

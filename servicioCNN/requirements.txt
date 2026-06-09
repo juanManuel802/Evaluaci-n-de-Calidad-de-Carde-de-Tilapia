@@ -1,0 +1,13 @@
+# Python 3.13 requerido (versión con la que fue validado el servicio).
+# Instalar: pip install -r requirements.txt
+#
+# NOTA: tensorflow==2.21.0 trae Keras 3. El servicio incluye un fix de
+# compatibilidad para modelos guardados con Keras 2 (DepthwiseConv2D + compile=False).
+# No actualizar tensorflow sin validar primero que el modelo sigue cargando.
+
+tensorflow==2.21.0
+fastapi==0.136.3
+uvicorn[standard]==0.49.0
+pillow==12.2.0
+numpy==2.4.6
+h5py==3.14.0

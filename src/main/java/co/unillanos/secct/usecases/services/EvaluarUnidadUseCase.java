@@ -7,6 +7,7 @@ import co.unillanos.secct.usecases.dto.ResultadoClasificacion;
 import co.unillanos.secct.usecases.ports.ClasificadorCnnPort;
 import co.unillanos.secct.usecases.ports.LoteRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -42,17 +43,32 @@ public class EvaluarUnidadUseCase {
                             + "/" + lote.getNumeroUnidadesMuestra() + ").");
         }
 
-        ResultadoClasificacion resultado = clasificador.clasificar(imagen);
+        List<ResultadoClasificacion> resultados;
+        try {
+            resultados = clasificador.clasificar(imagen);
+        } catch (Exception e) {
+            return OperationResult.fail("Error al clasificar la imagen: " + e.getMessage());
+        }
 
-        Evaluacion evaluacion = new Evaluacion(nombreImagen, resultado.getCategoriaNtc(), lote);
-        lote.registrarEvaluacion(evaluacion);
+        int categoriaFinal = resultados.stream()
+                .mapToInt(ResultadoClasificacion::getCategoriaNtc)
+                .max()
+                .orElseThrow(() -> new IllegalStateException("El clasificador no devolvió resultados."));
+
+        StringBuilder detalle = new StringBuilder();
+        for (ResultadoClasificacion r : resultados) {
+            detalle.append(r.getParte())
+                   .append(": categoría ").append(r.getCategoriaNtc())
+                   .append(" (confianza ").append(r.getPuntajeConfianza()).append("); ");
+        }
+
+        lote.registrarEvaluacion(new Evaluacion(nombreImagen, categoriaFinal, lote));
         loteRepository.save(lote);
 
         return OperationResult.ok(
-                "Unidad evaluada. Imagen: " + nombreImagen
-                        + ". Categoría NTC: " + resultado.getCategoriaNtc()
-                        + ". Confianza: " + resultado.getPuntajeConfianza()
-                        + ". Evaluadas: " + lote.cantidadEvaluaciones()
+                "Unidad evaluada. Imagen: " + nombreImagen + ". "
+                        + detalle
+                        + "Evaluadas: " + lote.cantidadEvaluaciones()
                         + "/" + lote.getNumeroUnidadesMuestra() + ".");
     }
 }

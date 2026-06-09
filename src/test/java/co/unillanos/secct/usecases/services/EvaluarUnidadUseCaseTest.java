@@ -2,10 +2,10 @@ package co.unillanos.secct.usecases.services;
 
 import co.unillanos.secct.entities.CodigoLote;
 import co.unillanos.secct.entities.EstadoLote;
-
 import co.unillanos.secct.entities.Evaluacion;
 import co.unillanos.secct.entities.FechaCaptura;
 import co.unillanos.secct.entities.Lote;
+import co.unillanos.secct.usecases.dto.PartePez;
 import co.unillanos.secct.entities.PesoLote;
 import co.unillanos.secct.entities.PuntoEvaluacion;
 import co.unillanos.secct.usecases.dto.OperationResult;
@@ -77,15 +77,21 @@ class EvaluarUnidadUseCaseTest {
     }
 
     private ClasificadorCnnPort clasificadorFijo(int categoria, double confianza) {
-        return imagen -> new ResultadoClasificacion(categoria, confianza);
+        return imagen -> List.of(new ResultadoClasificacion(PartePez.OJO, categoria, confianza));
+    }
+
+    private ClasificadorCnnPort clasificadorDosPartes(int catOjo, int catPiel) {
+        return imagen -> List.of(
+                new ResultadoClasificacion(PartePez.OJO,  catOjo,  0.90),
+                new ResultadoClasificacion(PartePez.PIEL, catPiel, 0.85));
     }
 
     private static class CapturingClasificador implements ClasificadorCnnPort {
         byte[] imagenRecibida = null;
 
-        public ResultadoClasificacion clasificar(byte[] imagen) {
+        public List<ResultadoClasificacion> clasificar(byte[] imagen) {
             this.imagenRecibida = imagen;
-            return new ResultadoClasificacion(3, 0.9);
+            return List.of(new ResultadoClasificacion(PartePez.OJO, 3, 0.9));
         }
     }
 
@@ -203,6 +209,30 @@ class EvaluarUnidadUseCaseTest {
         uc.execute("LOTE-20250524-007", "img-3.jpg", new byte[0]);
 
         assertEquals(3, l.cantidadEvaluaciones());
+    }
+
+    @Test
+    void shouldRegisterOneEvaluacionWhenCnnReturnsTwoParts() {
+        Lote l = lote("LOTE-20250524-009", 5);
+        CapturingLoteRepository repo = new CapturingLoteRepository(l);
+        EvaluarUnidadUseCase uc = new EvaluarUnidadUseCase(repo, clasificadorDosPartes(2, 4));
+
+        OperationResult result = uc.execute("LOTE-20250524-009", "img.jpg", new byte[0]);
+
+        assertTrue(result.isSuccess());
+        assertEquals(1, l.cantidadEvaluaciones(), "Dos partes CNN = una sola evaluación de unidad.");
+    }
+
+    @Test
+    void shouldUseWorstPartCategoryWhenCnnReturnsTwoParts() {
+        Lote l = lote("LOTE-20250524-010", 5);
+        CapturingLoteRepository repo = new CapturingLoteRepository(l);
+        EvaluarUnidadUseCase uc = new EvaluarUnidadUseCase(repo, clasificadorDosPartes(2, 4));
+
+        uc.execute("LOTE-20250524-010", "img.jpg", new byte[0]);
+
+        assertEquals(4, l.getEvaluaciones().get(0).getClasificacion(),
+                "La categoría persistida debe ser la peor (max) de las partes.");
     }
 
     @Test
