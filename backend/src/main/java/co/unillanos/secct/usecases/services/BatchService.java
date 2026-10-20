@@ -105,7 +105,7 @@ public class BatchService {
      * - Always records audit event EVALUATED_BATCHES_VIEWED (PL-5.08, PI-13).
      * - Returns List<BatchResponseDTO>.
      */
-    @Transactional(readOnly = true)
+    @Transactional
     public List<BatchResponseDTO> listEvaluated(Integer ownerId) {
         if (ownerId == null) {
             throw new BusinessException("Usuario no autenticado", 401);

@@ -8,6 +8,8 @@ import co.unillanos.secct.usecases.exceptions.BusinessException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.OffsetDateTime;
 import java.util.regex.Pattern;
@@ -34,6 +36,7 @@ public class LogService {
         this.eventTypeRepository = eventTypeRepository;
     }
 
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void recordEvent(String eventCode, Integer userId, Integer batchId, Integer evaluationId,
                             String description) {
         EventType eventType = eventTypeRepository.findByCode(eventCode)
