@@ -1,0 +1,42 @@
+-- HU-01 & DC-Log-transversal: Create role, event_type, and extend user and log tables
+
+CREATE TABLE IF NOT EXISTS rol (
+    id SMALLSERIAL PRIMARY KEY,
+    codigo VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS tipo_evento (
+    id SMALLSERIAL PRIMARY KEY,
+    codigo VARCHAR(50) NOT NULL UNIQUE,
+    descripcion VARCHAR(255)
+);
+
+-- Ensure usuario table has all required columns for User entity
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS rol_id SMALLINT REFERENCES rol(id);
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS nombres VARCHAR(50);
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS apellidos VARCHAR(50);
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS correo VARCHAR(255);
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS telefono VARCHAR(20);
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS contrasena_hash VARCHAR(255);
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS salt VARCHAR(255);
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS activo BOOLEAN NOT NULL DEFAULT TRUE;
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN NOT NULL DEFAULT FALSE;
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS deleted_at TIMESTAMPTZ;
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS deleted_by INTEGER REFERENCES usuario(id);
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS created_at TIMESTAMPTZ NOT NULL DEFAULT NOW();
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW();
+
+-- Sync email to correo if correo is empty
+DO $$
+BEGIN
+    IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='usuario' AND column_name='email') THEN
+        UPDATE usuario SET correo = email WHERE correo IS NULL;
+    END IF;
+END $$;
+
+-- Extend log table to match Log entity
+ALTER TABLE log ADD COLUMN IF NOT EXISTS tipo_evento_id SMALLINT REFERENCES tipo_evento(id);
+ALTER TABLE log ADD COLUMN IF NOT EXISTS usuario_id INTEGER REFERENCES usuario(id);
+ALTER TABLE log ADD COLUMN IF NOT EXISTS lote_id INTEGER REFERENCES lote(id);
+ALTER TABLE log ADD COLUMN IF NOT EXISTS evaluacion_id INTEGER;
+ALTER TABLE log ADD COLUMN IF NOT EXISTS fecha_hora TIMESTAMPTZ NOT NULL DEFAULT NOW();

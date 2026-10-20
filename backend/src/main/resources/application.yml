@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: secct
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://aws-0-us-east-2.pooler.supabase.com:5432/postgres?sslmode=require}
+    username: ${DB_USERNAME:postgres.gpwspwtzcfwpargpnrbc}
+    password: ${DB_PASSWORD:ProyScc2026}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      transaction-isolation: TRANSACTION_READ_COMMITTED
+      maximum-pool-size: ${DB_POOL_SIZE:20}
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0
+    validate-on-migrate: false
+    locations: classpath:db/migration
+
+secct:
+  cnn:
+    url: ${CNN_URL:http://localhost:8000}
+  jwt:
+    secret: ${JWT_SECRET:un_secreto_super_seguro_de_al_menos_32_caracteres_12345}
+    expirationMinutes: ${JWT_EXPIRATION_MINUTES:30}
+  cors:
+    allowedOrigin: ${CORS_ORIGIN:http://localhost:5173}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+logging:
+  file:
+    name: logs/secct.log
+  level:
+    co.unillanos.secct: INFO

@@ -1,0 +1,25 @@
+body{margin:0;font-family:'DM Sans',sans-serif;color:#0b3a5a}*{box-sizing:border-box}
+h1,h2,h3{font-family:'Fraunces',serif;margin:0}a{color:#0b4f7a}
+label{display:flex;flex-direction:column;gap:6px;font-size:14px}
+input,select,textarea{height:48px;border:1px solid #8fb0c9;border-radius:12px;padding:0 14px;font:inherit;background:#fff;color:#0b3a5a}
+textarea{height:84px;padding:12px 14px}small{color:#4d6a80;font-size:12px}
+fieldset{border:0;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.p{background:#0b4f7a;color:#fff;border:0;border-radius:12px;height:52px;font:600 16px 'DM Sans',sans-serif;padding:0 24px}
+.o{background:#fff;color:#0b4f7a;border:1.5px solid #0b4f7a;border-radius:12px;height:52px;font:600 16px 'DM Sans',sans-serif;padding:0 24px}
+.split{display:flex;min-height:720px}
+.brand{width:50%;background:#0b4f7a;color:#fff;padding:72px;display:flex;flex-direction:column;justify-content:center;gap:20px}
+.brand h2{font-size:48px;line-height:1.1}
+.chip{align-self:flex-start;background:#13608f;border-radius:99px;padding:6px 14px;font-size:13px;font-weight:600}
+.form{flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:72px 96px}
+.app{display:flex;min-height:720px;background:#f3f8fc}
+.side{width:240px;background:#094b72;color:#fff;padding:28px 16px;display:flex;flex-direction:column;gap:8px}
+.side a, aside a:not([aria-current]){color:rgba(255,255,255,0.9)!important;text-decoration:none}
+.side a[aria-current], aside a[aria-current]{background:#fff!important;color:#094b72!important;font-weight:600}
+.main{flex:1;padding:36px 44px;display:flex;flex-direction:column;gap:20px}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.badge{background:#dcebf6;border-radius:99px;padding:6px 14px;font-size:13px;font-weight:600}
+.card{background:#fff;border:1px solid #d5e3ee;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px}
+table{border-collapse:collapse;width:100%;font-size:14px}th{text-align:left;font-size:12px;letter-spacing:.06em;color:#4d6a80;padding:10px 8px;border-bottom:1px solid #d5e3ee}td{padding:12px 8px;border-bottom:1px solid #e6eef5}
+.tag{background:#dcebf6;border-radius:99px;padding:3px 10px;font-weight:600;font-size:12px}
+.drop{border:2px dashed #8fb0c9;border-radius:16px;background:#eaf4fb;height:150px;display:flex;align-items:center;justify-content:center;text-align:center;color:#4d6a80}
+.row{display:flex;gap:12px;justify-content:flex-end}
